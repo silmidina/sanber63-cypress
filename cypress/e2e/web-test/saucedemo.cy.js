@@ -4,7 +4,7 @@ describe('Saucedemo Login Scenarios', () => {
   beforeEach(() => {
     cy.visit('')
   })
-  it.only('login success - positive', () => {
+  it('login success - positive', () => {
     cy.loginSaucedemo('standard_user', 'secret_sauce')
     //cy.get('#user-name').type('standard_user')
     //cy.get('#password').type('secret_sauce')
@@ -30,10 +30,10 @@ describe('Saucedemo Login Scenarios', () => {
     //cy.get('#login-button').click()
     //cy.get('[data-test="error"]').should('have.text', 'Epic sadface: Sorry, this user has been locked out.')
   })
-  it.skip('login env', () => {
-    cy.get('#user-name').type('userstg')
+  it('login env', () => {
+    cy.ketik('#user-name', 'standard_user')
     cy.get('#password').type('secret_sauce')
-    cy.get('login-button').click()
+    cy.get('#login-button').click()
   })
 
 })
